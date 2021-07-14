@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/walletFragment">
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.xcritical.fragment.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/instrumentFragment"
+        android:name="com.example.xcritical.fragment.InstrumentFragment"
+        android:label="fragment_instrument"
+        tools:layout="@layout/fragment_instrument" />
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.example.xcritical.fragment.MoreFragment"
+        android:label="fragment_more"
+        tools:layout="@layout/fragment_more" />
+    <fragment
+        android:id="@+id/signalsFragment"
+        android:name="com.example.xcritical.fragment.SignalsFragment"
+        android:label="fragment_signals"
+        tools:layout="@layout/fragment_signals" />
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.example.xcritical.fragment.WalletFragment"
+        android:label="fragment_wallet"
+        tools:layout="@layout/fragment_wallet" />
+</navigation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/walletFragment"
+        android:icon="@drawable/ic_my_deal"
+        android:title="@string/myDeal" />
+
+    <item
+        android:id="@+id/accountFragment"
+        android:icon="@drawable/ic_users"
+        android:title="@string/account" />
+
+    <item
+        android:id="@+id/instrumentFragment"
+        android:icon="@drawable/ic_instrument"
+        android:title="@string/instruments" />
+
+    <item
+        android:id="@+id/signalsFragment"
+        android:icon="@drawable/ic_signals"
+        android:title="@string/signals" />
+
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/ic_more"
+        android:title="@string/more" />
+</menu>

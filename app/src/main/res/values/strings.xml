@@ -3,10 +3,23 @@
     <string name="text_forgot"><u>Забыли пароль?</u></string>
     <string name="text_enter_password">Введите пароль</string>
     <string name="text_password">Пароль</string>
-    <string name="e_mail">Введите e-mail</string>
-    <string name="text_e_mail">E-mail</string>
+    <string name="text_input_email">Введите e-mail</string>
+    <string name="text_email">E-mail</string>
     <string name="text_login">Войти</string>
     <string name="text_signup">Зарегистрироваться</string>
-    <string name="text_error">Неверный пароль</string>
-    <string name="text_email">Неверный e-mail</string>
+    <string name="text_error_password">Неверный пароль</string>
+    <string name="text_error_email">Неверный e-mail</string>
+    <string name="text_next">Далее</string>
+    <string name="text_name">Имя</string>
+    <string name="text_input_name">Ваше имя</string>
+    <string name="text_error_name">Обязательное поле</string>
+    <string name="text_lastname">Фамилия</string>
+    <string name="text_input_lastname">Ваша фамилия</string>
+    <string name="myDeal">МОИ СДЕЛКИ</string>
+    <string name="account">АККАУНТ</string>
+    <string name="instruments">ИНСТРУМЕНТЫ</string>
+    <string name="signals">СИГНАЛЫ</string>
+    <string name="more">ЕЩЕ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

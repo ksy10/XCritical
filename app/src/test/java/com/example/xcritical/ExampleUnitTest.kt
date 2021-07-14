@@ -1,4 +1,4 @@
-package com.example.xcristal
+package com.example.xcritical
 
 import org.junit.Test
 

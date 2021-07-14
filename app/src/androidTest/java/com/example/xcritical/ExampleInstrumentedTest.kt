@@ -1,4 +1,4 @@
-package com.example.xcristal
+package com.example.xcritical
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

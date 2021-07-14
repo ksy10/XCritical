@@ -7,11 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="error_input">#FF2A50</color>
-    <color name="button_registration">#1A1933</color>
-    <color name="button_login">#687BDD</color>
-    <color name="text_login_screen">#E5E5E5</color>
-    <color name="text_forgot_password">#7373A4</color>
-    <color name="background_login_screen">#04050E</color>
+    <color name="redError">#FF2A50</color>
+    <color name="buttonDark">#1A1933</color>
+    <color name="buttonLight">#687BDD</color>
+    <color name="hintText">#7373A4</color>
+    <color name="lightPurpleText">#687BDD</color>
+    <color name="background">#04050E</color>
+    <color name="blue">#193594</color>
+    <color name="purple_light">#B5B6EB</color>
+    <color name="blue_light">#546EE5</color>
+    <color name="blue_dark">#161A37</color>
+    <color name="green">#15D892</color>
 
 </resources>
