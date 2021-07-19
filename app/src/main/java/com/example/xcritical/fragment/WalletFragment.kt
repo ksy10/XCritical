@@ -1,18 +1,26 @@
 package com.example.xcritical.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.os.bundleOf
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xcritical.instruments.AdapterInstrument
 import com.example.xcritical.instruments.CardInstrument
 import com.example.xcritical.R
+import com.example.xcritical.instruments.ViewModelInstrument
 
 
 class WalletFragment : Fragment() {
+
+    private lateinit var viewModel: ViewModelInstrument
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,21 +31,17 @@ class WalletFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(this).get(ViewModelInstrument::class.java)
+
         val recyclerView = getView()?.findViewById<RecyclerView>(R.id.recycler)
         recyclerView?.layoutManager = LinearLayoutManager(this.context)
-        recyclerView?.adapter = AdapterInstrument(generateList(20))
+        recyclerView?.adapter = AdapterInstrument(viewModel.generateList(20)) { Id -> cardItemClicked(Id)
+        }
     }
 
-    private fun generateList(size:Int):ArrayList<CardInstrument> {
-        val list = ArrayList<CardInstrument>()
-        for (i in 0 until size) {
-            val draw = when(i%2) {
-                0-> R.drawable.ic_default_icon_currency
-                else -> R.drawable.ic_star
-            }
-            val item = CardInstrument("AUD","/","JPY","73,5670","/","73,5940","0,03%")
-            list += item
-        }
-        return list
+    fun cardItemClicked(Id: Int) {
+        val bundle = bundleOf("Id" to "Card id $Id")
+        view?.findNavController()?.navigate(R.id.action_walletFragment_to_informationFragment, bundle)
     }
 }

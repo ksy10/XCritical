@@ -1,15 +1,358 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".fragment.AccountFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#F44336"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="900dp"
+                app:cardBackgroundColor="@color/background">
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="30dp"
+                    app:srcCompat="@drawable/ic_back" />
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="360dp"
+                    android:layout_marginLeft="360dp"
+                    android:layout_marginTop="20dp"
+                    app:srcCompat="@drawable/ic_settings" />
+
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="367dp"
+                    android:layout_marginLeft="367dp"
+                    android:layout_marginTop="34dp"
+                    app:srcCompat="@drawable/ic_sig" />
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Баланс:"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="135dp"
+                    android:layout_marginLeft="135dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="$9 481,73"
+                    android:textColor="@color/white"
+                    android:textSize="26sp" />
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Доступно:"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/textView37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="148dp"
+                    android:layout_marginLeft="148dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="$9 481,73"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/textView38"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="220dp"
+                    android:layout_marginLeft="220dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="R&amp;L:"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/textView39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="255dp"
+                    android:layout_marginLeft="255dp"
+                    android:layout_marginTop="55dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="$266,01"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="120dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="Фильтр сигналов"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="248dp"
+                    android:layout_marginLeft="248dp"
+                    android:layout_marginTop="200dp"
+                    app:srcCompat="@drawable/ic_rectangles" />
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="174dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Минимальная сила сигналов"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/imageView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="119dp"
+                    android:layout_marginLeft="119dp"
+                    android:layout_marginTop="213dp"
+                    app:srcCompat="@drawable/ic_ellipse_blue" />
+
+                <ImageView
+                    android:id="@+id/imageView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="220dp"
+                    app:srcCompat="@drawable/ic_line_blue" />
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="263dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Таймфрейм:"
+                    android:textColor="@color/white" />
+
+                <CheckBox
+                    android:id="@+id/checkBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="294dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="15 мин"
+                    android:textColor="@color/grey" />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="294dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="30 мин"
+                    android:textColor="@color/grey" />
+
+                <CheckBox
+                    android:id="@+id/checkBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="182dp"
+                    android:layout_marginLeft="182dp"
+                    android:layout_marginTop="294dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="1 час"
+                    android:textColor="@color/grey" />
+
+                <CheckBox
+                    android:id="@+id/checkBox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="252dp"
+                    android:layout_marginLeft="252dp"
+                    android:layout_marginTop="294dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="4 часа"
+                    android:textColor="@color/grey" />
+
+                <CheckBox
+                    android:id="@+id/checkBox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="330dp"
+                    android:layout_marginLeft="330dp"
+                    android:layout_marginTop="294dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="1 д"
+                    android:textColor="@color/grey" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="207dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="360dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Отображать рекомендации с неторговым временем"
+                    android:textColor="@color/white" />
+
+                <Switch
+                    android:id="@+id/switch2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="330dp"
+                    android:layout_marginLeft="330dp"
+                    android:layout_marginTop="359dp" />
+
+                <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="415dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Настроить список инструментов:"
+                    android:textColor="@color/blue_light"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="446dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="Выбрано 120 инструментов из 250 доступных"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="516dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Получать уведомления"
+                    android:textColor="@color/white" />
+
+                <Switch
+                    android:id="@+id/switch3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="330dp"
+                    android:layout_marginLeft="330dp"
+                    android:layout_marginTop="510dp" />
+
+                <ImageView
+                    android:id="@+id/imageView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="248dp"
+                    android:layout_marginLeft="248dp"
+                    android:layout_marginTop="600dp"
+                    app:srcCompat="@drawable/ic_rectangles" />
+
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="570dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Минимальная сила сигналов"
+                    android:textColor="@color/white" />
+
+                <ImageView
+                    android:id="@+id/imageView23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="119dp"
+                    android:layout_marginLeft="119dp"
+                    android:layout_marginTop="613dp"
+                    app:srcCompat="@drawable/ic_ellipse_blue" />
+
+                <ImageView
+                    android:id="@+id/imageView24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginTop="620dp"
+                    app:srcCompat="@drawable/ic_line_blue" />
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginTop="670dp"
+                    android:layout_marginEnd="100dp"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/button_light_style"
+                    android:text="Применить"
+                    android:textAllCaps="false" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

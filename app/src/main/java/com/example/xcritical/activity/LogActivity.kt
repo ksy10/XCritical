@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import com.example.xcritical.R
-import com.example.xcritical.instruments.ViewModel_Instrument
+import com.example.xcritical.instruments.ViewModelInstrument
 
 
 class LogActivity : AppCompatActivity() {
@@ -23,13 +23,13 @@ class LogActivity : AppCompatActivity() {
     private val textErrorPassword by lazy { findViewById<TextView>(R.id.textErrorPassword) }
     private val buttonLogin by lazy { findViewById<Button>(R.id.buttonLogin) }
 
-    private lateinit var viewModel: ViewModel_Instrument
+    private lateinit var viewModel: ViewModelInstrument
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log)
 
-        viewModel = ViewModelProvider(this).get(ViewModel_Instrument::class.java)
+        viewModel = ViewModelProvider(this).get(ViewModelInstrument::class.java)
 
         initListener()
 
@@ -37,20 +37,19 @@ class LogActivity : AppCompatActivity() {
             viewModel.email = editTextEmail.text.toString()
             viewModel.password = editTextPassword.text.toString()
 
-            if(viewModel.validationEmail()) {
+            if (!viewModel.validationEmail()) {
                 textErrorEmail.visibility = View.VISIBLE
             }
-            else  {
+            else {
                 textErrorEmail.visibility = View.INVISIBLE
             }
-            if (viewModel.validationPassword()) {
+            if (!viewModel.validationPassword()) {
                 textErrorPassword.visibility = View.VISIBLE
             }
-            else{
+            else {
                 textErrorPassword.visibility = View.INVISIBLE
             }
-
-            if (!textErrorEmail.isVisible || !textErrorPassword.isVisible) {
+            if (!textErrorEmail.isVisible && !textErrorPassword.isVisible) {
                 mainScreen()
             }
         }
