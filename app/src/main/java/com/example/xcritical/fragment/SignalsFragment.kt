@@ -35,9 +35,9 @@ class SignalsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         buttonMovies?.setOnClickListener {
-            //recyclerView?.layoutManager = LinearLayoutManager(this.context)
-            //recyclerView?.adapter = AdapterGetMovies(viewModel.getRequest())
-        //    viewModel.getRequest()
+         //   recyclerView?.layoutManager = LinearLayoutManager(this.context)
+        //    recyclerView?.adapter = AdapterGetMovies(viewModel.getRequest())
+            viewModel.getRequest()
         }
     }
 }

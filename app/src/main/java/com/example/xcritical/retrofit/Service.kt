@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface Service {
     @GET("marvel")
-    suspend fun getMovie(): Response<Movies>
+    suspend fun getMovie(): Response<MutableList<Movies>>
 }

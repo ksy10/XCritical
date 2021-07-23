@@ -18,7 +18,7 @@ object Network {
     @Provides
     fun provideRetrofit(moshi: Moshi): Retrofit = Retrofit.Builder()
         .baseUrl("https://www.simplifiedcoding.net/demos/")
-       // .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 
     @Singleton

@@ -17,9 +17,6 @@ class LocalApi @Inject constructor() {
     }
 
     fun getIdFromList(Id: Int): CardInstrument {
-        if (list.isNullOrEmpty()) {
-            createdList()
-        }
         return list.filter { it.Id == Id }[0]
     }
 
