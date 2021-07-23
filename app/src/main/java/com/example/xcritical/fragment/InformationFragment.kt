@@ -6,10 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import com.example.xcritical.R
+import com.example.xcritical.viewmodel.ViewModelId
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class InformationFragment : Fragment() {
+
+    private val viewModel by lazy { ViewModelProvider(this).get(ViewModelId::class.java)}
+    private val textId by lazy { view?.findViewById<TextView>(R.id.textId) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,7 +27,12 @@ class InformationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val text = view.findViewById<TextView>(R.id.textId)
-        text.text = arguments?.getString("Id") // todo id model viewmodel
+        val cardId: Int = arguments?.getInt("Id")!!
+        init(cardId)
+    }
+
+    private fun init(Id: Int) {
+        val model = viewModel.getId(Id)
+        textId?.text = model.Id.toString()
     }
 }

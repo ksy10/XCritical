@@ -1,6 +1,6 @@
 package com.example.xcritical.instruments
 
-data class CardInstrument (
+data class CardInstrumentWithImage(
     val Id: Int,
     val country: String,
     val currency: String,
@@ -8,4 +8,6 @@ data class CardInstrument (
     val stick1: String,
     val money1: String,
     val stick2: String,
-    val profit: String)
+    val profit: String,
+    val imageCountry: Int,
+    val imageStar: Int )

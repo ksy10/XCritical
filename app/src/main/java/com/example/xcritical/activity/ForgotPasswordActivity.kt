@@ -9,9 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.example.xcritical.R
-import com.example.xcritical.instruments.ViewModelInstrument
 
 
 class ForgotPasswordActivity : AppCompatActivity() {
@@ -20,17 +18,17 @@ class ForgotPasswordActivity : AppCompatActivity() {
     private  val editTextEmail by lazy { findViewById<EditText>(R.id.editTextEmail) }
     private val buttonChange by lazy { findViewById<Button>(R.id.buttonChange) }
 
-    private lateinit var viewModel: ViewModelInstrument
+    //private lateinit var viewModel: ViewModelLog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgot_password)
 
-        viewModel = ViewModelProvider(this).get(ViewModelInstrument::class.java)
+        //viewModel = ViewModelProvider(this).get(ViewModelLog::class.java)
 
         initListener()
 
-        buttonChange.setOnClickListener {
+        /*buttonChange.setOnClickListener {
             viewModel.email = editTextEmail.text.toString()
 
             if(!viewModel.validationEmail()){
@@ -39,7 +37,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
             else {
                 textErrorEmail.visibility = View.INVISIBLE
             }
-        }
+        }*/
     }
 
     private fun initListener() {
@@ -52,7 +50,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 textErrorEmail.visibility = View.INVISIBLE
-                viewModel.validationEmail()
+                //viewModel.validationEmail()
             }
         })
     }

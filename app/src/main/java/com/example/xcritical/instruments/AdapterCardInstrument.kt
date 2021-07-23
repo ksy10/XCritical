@@ -7,8 +7,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xcritical.R
 
-class AdapterInstrument(private val cardInstrument: List<CardInstrument>, private val clickListener: (Int) -> Unit)
-    : RecyclerView.Adapter<AdapterInstrument.CardHolder>() {
+
+class AdapterCardInstrument(private val cardInstrument: ArrayList<CardInstrumentWithImage>, private val clickListener: (Int) -> Unit)
+    : RecyclerView.Adapter<AdapterCardInstrument.CardHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.card_instrument, parent,false)
@@ -24,7 +25,7 @@ class AdapterInstrument(private val cardInstrument: List<CardInstrument>, privat
     }
 
     class CardHolder(item: View) : RecyclerView.ViewHolder(item) {
-        fun bind(cardInstrument: CardInstrument, clickListener: (Int) -> Unit) {
+        fun bind(cardInstrument: CardInstrumentWithImage, clickListener: (Int) -> Unit) {
             val textView1: TextView = itemView.findViewById(R.id.text1)
             val textView2: TextView = itemView.findViewById(R.id.text2)
             val textView3: TextView = itemView.findViewById(R.id.text3)

@@ -12,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import com.example.xcritical.R
-import com.example.xcritical.instruments.ViewModelInstrument
+import com.example.xcritical.viewmodel.ViewModelLog
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LogActivity : AppCompatActivity() {
 
     private val textErrorEmail by lazy { findViewById<TextView>(R.id.textErrorEmail) }
@@ -23,35 +24,36 @@ class LogActivity : AppCompatActivity() {
     private val textErrorPassword by lazy { findViewById<TextView>(R.id.textErrorPassword) }
     private val buttonLogin by lazy { findViewById<Button>(R.id.buttonLogin) }
 
-    private lateinit var viewModel: ViewModelInstrument
+    private lateinit var viewModel: ViewModelLog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log)
 
-        viewModel = ViewModelProvider(this).get(ViewModelInstrument::class.java)
+        viewModel = ViewModelProvider(this).get(ViewModelLog::class.java)
 
         initListener()
 
         buttonLogin.setOnClickListener {
-            viewModel.email = editTextEmail.text.toString()
-            viewModel.password = editTextPassword.text.toString()
-
-            if (!viewModel.validationEmail()) {
-                textErrorEmail.visibility = View.VISIBLE
-            }
-            else {
-                textErrorEmail.visibility = View.INVISIBLE
-            }
-            if (!viewModel.validationPassword()) {
-                textErrorPassword.visibility = View.VISIBLE
-            }
-            else {
-                textErrorPassword.visibility = View.INVISIBLE
-            }
-            if (!textErrorEmail.isVisible && !textErrorPassword.isVisible) {
-                mainScreen()
-            }
+            mainScreen()
+//            viewModel.email = editTextEmail.text.toString()
+//            viewModel.password = editTextPassword.text.toString()
+//
+//            if (!viewModel.validationEmail()) {
+//                textErrorEmail.visibility = View.VISIBLE
+//            }
+//            else {
+//                textErrorEmail.visibility = View.INVISIBLE
+//            }
+//            if (!viewModel.validationPassword()) {
+//                textErrorPassword.visibility = View.VISIBLE
+//            }
+//            else {
+//                textErrorPassword.visibility = View.INVISIBLE
+//            }
+//            if (!textErrorEmail.isVisible && !textErrorPassword.isVisible) {
+//                mainScreen()
+//            }
         }
     }
 
