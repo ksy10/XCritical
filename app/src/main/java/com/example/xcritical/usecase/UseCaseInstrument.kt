@@ -13,7 +13,6 @@ class UseCaseInstrument @Inject constructor(private val repository: Repository) 
     private val listPresentation = ArrayList<CardInstrumentWithImage>()
 
     fun getList(): ArrayList<CardInstrumentWithImage> {
-   // return listPresentation
         return repletionImage(repository.getList())
     }
 
@@ -21,7 +20,7 @@ class UseCaseInstrument @Inject constructor(private val repository: Repository) 
         val listPresentation = ArrayList<CardInstrumentWithImage>()
         for (i in 0 until listInstrument.size) {
                 listPresentation += CardInstrumentWithImage(
-                    listInstrument[i].Id,
+                    listInstrument[i].id,
                     listInstrument[i].country,
                     listInstrument[i].currency,
                     listInstrument[i].money2,

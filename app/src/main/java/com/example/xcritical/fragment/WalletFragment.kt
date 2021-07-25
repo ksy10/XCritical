@@ -33,12 +33,12 @@ class WalletFragment : Fragment() {
 
         val recyclerView = getView()?.findViewById<RecyclerView>(R.id.recycler)
         recyclerView?.layoutManager = LinearLayoutManager(this.context)
-        recyclerView?.adapter = AdapterCardInstrument(viewModel.getList()) { Id -> cardItemClicked(Id)
+        recyclerView?.adapter = AdapterCardInstrument(viewModel.getList()) { id -> cardItemClicked(id)
         }
     }
 
-    private fun cardItemClicked(Id: Int) {
-        val bundle = bundleOf("Id" to "Card id $Id")
+    private fun cardItemClicked(id: Int) {
+        val bundle = bundleOf("id" to "Card id $id")
         view?.findNavController()?.navigate(R.id.action_walletFragment_to_informationFragment, bundle)
     }
 }

@@ -15,7 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class InformationFragment : Fragment() {
 
     private val viewModel by lazy { ViewModelProvider(this).get(ViewModelId::class.java)}
-    private val textId by lazy { view?.findViewById<TextView>(R.id.textId) }
+    private val textId by lazy { view?.findViewById<TextView>(R.id.id) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,12 +27,12 @@ class InformationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val cardId: Int = arguments?.getInt("Id")!!
+        val cardId: Int = arguments?.getInt("id")!!
         init(cardId)
     }
 
-    private fun init(Id: Int) {
-        val model = viewModel.getId(Id)
-        textId?.text = model.Id.toString()
+    private fun init(id: Int) {
+        val model = viewModel.getId(id)
+        textId?.text = model.id.toString()
     }
 }

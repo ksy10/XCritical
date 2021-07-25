@@ -10,7 +10,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ViewModelId  @Inject constructor(private val useCaseId: UseCaseId) : ViewModel() {
 
-    fun getId(Id: Int): CardInstrument {
-        return useCaseId.getId(Id)
+    fun getId(id: Int): CardInstrument {
+        return useCaseId.getId(id)
     }
 }

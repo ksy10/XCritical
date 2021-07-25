@@ -1,6 +1,7 @@
 package com.example.xcritical.local
 
 import com.example.xcritical.instruments.CardInstrument
+import com.example.xcritical.retrofit.Movies
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -8,16 +9,17 @@ import javax.inject.Singleton
 class LocalApi @Inject constructor() {
 
     private var list = ArrayList<CardInstrument>()
+    //private val movies = ArrayList<Movie>()
 
-    fun generateList() : ArrayList<CardInstrument> {
+    fun generateList(): ArrayList<CardInstrument> {
        if (list.isNullOrEmpty()) {
            createdList()
        }
         return list
     }
 
-    fun getIdFromList(Id: Int): CardInstrument {
-        return list.filter { it.Id == Id }[0]
+    fun getIdFromList(id: Int): CardInstrument {
+        return list.filter { it.id == id }[0]
     }
 
     private fun createdList() {
@@ -25,5 +27,9 @@ class LocalApi @Inject constructor() {
             val item = CardInstrument(i,"AUD","/","JPY","73,5670","/","73,5940","0,03%")
             list += item
         }
+    }
+
+    fun createMovieList() {
+
     }
 }

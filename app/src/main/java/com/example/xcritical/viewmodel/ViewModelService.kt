@@ -15,7 +15,6 @@ class ViewModelService @Inject constructor(private val service: Service) : ViewM
 
     private lateinit var liveDataList: MutableLiveData<Movies>
 
-
     fun getLiveData(): MutableLiveData<Movies> {
         return liveDataList
     }
@@ -29,7 +28,6 @@ class ViewModelService @Inject constructor(private val service: Service) : ViewM
             catch (ex:Exception){
                 var t = ex
             }
-
         }
     }
 }

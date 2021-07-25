@@ -13,7 +13,7 @@
         android:background="@color/background">
 
         <TextView
-            android:id="@+id/textId"
+            android:id="@+id/id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"

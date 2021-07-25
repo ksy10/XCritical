@@ -1,7 +1,7 @@
 package com.example.xcritical.instruments
 
 data class CardInstrumentWithImage(
-    val Id: Int,
+    val id: Int,
     val country: String,
     val currency: String,
     val money2: String,

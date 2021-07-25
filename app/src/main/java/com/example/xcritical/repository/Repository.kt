@@ -7,11 +7,15 @@ import javax.inject.Inject
 
 class Repository @Inject constructor(private val localAPI: LocalApi) {
 
-    fun getList() : ArrayList<CardInstrument>{
+    fun getList(): ArrayList<CardInstrument>{
         return localAPI.generateList()
     }
 
-    fun getId(Id: Int): CardInstrument {
-        return localAPI.getIdFromList(Id)
+    fun getId(id: Int): CardInstrument {
+        return localAPI.getIdFromList(id)
+    }
+
+    fun getMoviesList() {
+
     }
 }
