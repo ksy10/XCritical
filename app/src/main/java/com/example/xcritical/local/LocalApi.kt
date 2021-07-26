@@ -9,7 +9,7 @@ import javax.inject.Singleton
 class LocalApi @Inject constructor() {
 
     private var list = ArrayList<CardInstrument>()
-    //private val movies = ArrayList<Movie>()
+    private var movies: MutableList<Movies>? = null
 
     fun generateList(): ArrayList<CardInstrument> {
        if (list.isNullOrEmpty()) {
@@ -29,7 +29,11 @@ class LocalApi @Inject constructor() {
         }
     }
 
-    fun createMovieList() {
+    fun createMoviesList(listMovies: MutableList<Movies>?) {
+        movies = listMovies
+    }
 
+    fun getListMovies(): MutableList<Movies>? {
+        return movies
     }
 }
