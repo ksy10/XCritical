@@ -21,12 +21,14 @@ class LogActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_log)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+        viewModel.getProperty()
         initSwitchOver()
     }
 
     private fun initSwitchOver() {
     viewModel.login.observe(this) {
         if(it) {
+            viewModel.saveLogin()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
