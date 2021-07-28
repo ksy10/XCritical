@@ -10,8 +10,8 @@ import javax.inject.Inject
 @HiltViewModel
 class ViewModelLog @Inject constructor() : ViewModel() {
 
-    var email = MutableLiveData<String>()
-    var password = MutableLiveData<String>()
+    var email = MutableLiveData<String>().apply { value = "k@g.c" }
+    var password = MutableLiveData<String>().apply { value = "123" }
 
     private val _validEmail = MutableLiveData<Boolean>().apply { value = true }
     val validEmail: LiveData<Boolean>
@@ -26,7 +26,7 @@ class ViewModelLog @Inject constructor() : ViewModel() {
     get() = _login
 
     fun onLogin() {
-        _validEmail.value = !email.value.isNullOrEmpty() && Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches()
+        _validEmail.value = !email.value.isNullOrEmpty() || Patterns.EMAIL_ADDRESS.matcher(email.toString()).matches()
         _validPassword.value = !password.value.isNullOrEmpty()
         _login.value = !(email.value.isNullOrEmpty() || password.value.isNullOrEmpty())
     }

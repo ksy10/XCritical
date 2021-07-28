@@ -1,46 +1,61 @@
 package com.example.xcritical.fragment
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.xcritical.R
-import com.example.xcritical.instruments.AdapterCardInstrument
+import com.example.xcritical.databinding.FragmentSignalsBinding
 import com.example.xcritical.instruments.AdapterGetMovies
-//import com.example.xcritical.instruments.AdapterGetMovies
-import com.example.xcritical.viewmodel.ViewModelInstrument
 import com.example.xcritical.viewmodel.ViewModelService
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SignalsFragment : Fragment() {
 
-    private val buttonMovies by lazy { view?.findViewById<Button>(R.id.buttonmovie) }
-    private val recyclerView by lazy { view?.findViewById<RecyclerView>(R.id.recyclerView) }
     private val viewModel by lazy { ViewModelProvider(this).get(ViewModelService::class.java)}
+    private var adapter: AdapterGetMovies? = null
+    private lateinit var binding: FragmentSignalsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_signals, container, false)
+    ): View {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_signals, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
         viewModel.getRequest()
 
-        buttonMovies?.setOnClickListener {
+        binding.buttonmovie.setOnClickListener {
             val listMovies = viewModel.getMoviesList()
-            recyclerView?.layoutManager = LinearLayoutManager(this.context)
-            recyclerView?.adapter = AdapterGetMovies(listMovies!!)
+            adapter = AdapterGetMovies(listMovies!!)
+            binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
+            binding.recyclerView.adapter = adapter
         }
+
+        binding.editTextSearch.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                adapter?.updateFilteredList(viewModel.setMoviesListForFilter(s.toString()))
+            }
+        })
     }
 }

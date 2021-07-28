@@ -1,9 +1,12 @@
 package com.example.xcritical.instruments
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -11,9 +14,11 @@ import com.bumptech.glide.Glide
 import com.example.xcritical.R
 import com.example.xcritical.retrofit.Movies
 import com.squareup.picasso.Picasso
+import java.util.*
+import kotlin.collections.ArrayList
 
 
-class AdapterGetMovies(private var movies: MutableList<Movies>) : RecyclerView.Adapter<AdapterGetMovies.MoviesViewHolder>() {
+class AdapterGetMovies(private var movies: MutableList<Movies>?) : RecyclerView.Adapter<AdapterGetMovies.MoviesViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         val itemView =
@@ -22,12 +27,12 @@ class AdapterGetMovies(private var movies: MutableList<Movies>) : RecyclerView.A
     }
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
-        holder.bind(movies[position])
-        Picasso.get().load(movies[position].imageurl).into(holder.imageMovie)
+        holder.bind(movies!![position])
+        Picasso.get().load(movies!![position].imageurl).into(holder.imageMovie)
     }
 
     override fun getItemCount(): Int {
-        return movies.size
+        return movies!!.size
     }
 
     class MoviesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -48,7 +53,11 @@ class AdapterGetMovies(private var movies: MutableList<Movies>) : RecyclerView.A
             firstAppearance.text = movies.firstappearance
             createDby.text = movies.createdby
             publisher.text = movies.publisher
-
         }
+    }
+
+    fun updateFilteredList(listFilter: MutableList<Movies>?) {
+        movies = listFilter
+        notifyDataSetChanged()
     }
 }
