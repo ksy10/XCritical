@@ -6,6 +6,19 @@
     android:layout_height="60dp"
     android:background="@color/blue_dark">
 
+    <ImageView
+        android:id="@+id/imagecountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/country"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_default_icon_currency" />
+
     <TextView
         android:id="@+id/country"
         android:layout_width="wrap_content"
@@ -21,22 +34,6 @@
         app:layout_constraintVertical_bias="0.512" />
 
     <TextView
-        android:id="@+id/currency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:text="JPY"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/money2"
-        app:layout_constraintStart_toEndOf="@+id/stick1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
-
-    <TextView
         android:id="@+id/stick1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,43 +45,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.512" />
 
-    <ImageView
-        android:id="@+id/imagecountry"
+    <TextView
+        android:id="@+id/currency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:text="JPY"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/country"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/money1"
+        app:layout_constraintStart_toEndOf="@+id/stick1"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_default_icon_currency" />
+        app:layout_constraintVertical_bias="0.512" />
 
     <TextView
         android:id="@+id/money1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:text="73,5940"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/profit"
-        app:layout_constraintStart_toEndOf="@+id/stick2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
-
-    <TextView
-        android:id="@+id/money2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
         android:text="73,5670"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -100,8 +81,24 @@
         android:text="/"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/money1"
-        app:layout_constraintStart_toEndOf="@+id/money2"
+        app:layout_constraintEnd_toStartOf="@+id/money2"
+        app:layout_constraintStart_toEndOf="@+id/money1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.512" />
+
+    <TextView
+        android:id="@+id/money2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="73,5940"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/profit"
+        app:layout_constraintStart_toEndOf="@+id/stick2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.512" />
 
@@ -115,7 +112,7 @@
         android:textColor="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imagestar"
-        app:layout_constraintStart_toEndOf="@+id/money1"
+        app:layout_constraintStart_toEndOf="@+id/money2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView

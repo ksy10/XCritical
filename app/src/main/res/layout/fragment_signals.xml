@@ -54,8 +54,8 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="50dp"
                 android:ems="10"
-                android:text="@{viewModel.textListener}"
                 android:inputType="textPersonName"
+                android:text="@{viewModel.textListener}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/buttonmovie" />

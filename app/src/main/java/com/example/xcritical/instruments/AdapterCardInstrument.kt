@@ -30,29 +30,29 @@ class AdapterCardInstrument(private val cardInstrument: ArrayList<CardInstrument
         val currentItem = filterList[position]
 
         holder.imageCountry.setImageResource(currentItem.imageCountry)
-        holder.imageStar.setImageResource(currentItem.imageStar)
         holder.country.text =  currentItem.country
         holder.stick1.text =  currentItem.stick1
         holder.currency.text =  currentItem.currency
-        holder.money2.text =  currentItem.money2
-        holder.stick2.text =  currentItem.stick2
         holder.money1.text =  currentItem.money1
+        holder.stick2.text =  currentItem.stick2
+        holder.money2.text =  currentItem.money2
         holder.profit.text =  currentItem.profit
+        holder.imageStar.setImageResource(currentItem.imageStar)
         holder.itemView.setOnClickListener { onClick(currentItem.id) }
     }
 
     override fun getItemCount(): Int = filterList.size
 
     class CardHolder(item: View) : RecyclerView.ViewHolder(item) {
-            var imageCountry : ImageView = itemView.findViewById(R.id.imagecountry)
-            var imageStar : ImageView = itemView.findViewById(R.id.imagestar)
-            val country: TextView = itemView.findViewById(R.id.country)
-            val stick1: TextView = itemView.findViewById(R.id.stick1)
-            val currency: TextView = itemView.findViewById(R.id.currency)
-            val money2: TextView = itemView.findViewById(R.id.money2)
-            val stick2: TextView = itemView.findViewById(R.id.stick2)
-            val money1: TextView = itemView.findViewById(R.id.money1)
-            val profit: TextView = itemView.findViewById(R.id.profit)
+        val imageCountry : ImageView = itemView.findViewById(R.id.imagecountry)
+        val country: TextView = itemView.findViewById(R.id.country)
+        val stick1: TextView = itemView.findViewById(R.id.stick1)
+        val currency: TextView = itemView.findViewById(R.id.currency)
+        val money2: TextView = itemView.findViewById(R.id.money1)
+        val stick2: TextView = itemView.findViewById(R.id.stick2)
+        val money1: TextView = itemView.findViewById(R.id.money2)
+        val profit: TextView = itemView.findViewById(R.id.profit)
+        val imageStar : ImageView = itemView.findViewById(R.id.imagestar)
     }
 
     override fun getFilter(): Filter {
@@ -83,5 +83,10 @@ class AdapterCardInstrument(private val cardInstrument: ArrayList<CardInstrument
                 notifyDataSetChanged()
             }
         }
+    }
+
+    fun deleteItem(pos: Int) {
+        cardInstrument.removeAt(pos)
+        notifyItemRemoved(pos)
     }
 }

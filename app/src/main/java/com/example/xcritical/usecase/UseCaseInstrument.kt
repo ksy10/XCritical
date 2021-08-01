@@ -22,11 +22,11 @@ class UseCaseInstrument @Inject constructor(private val repository: Repository) 
                 listPresentation += CardInstrumentWithImage(
                     listInstrument[i].id,
                     listInstrument[i].country,
-                    listInstrument[i].currency,
-                    listInstrument[i].money2,
                     listInstrument[i].stick1,
+                    listInstrument[i].currency,
                     listInstrument[i].money1,
                     listInstrument[i].stick2,
+                    listInstrument[i].money2,
                     listInstrument[i].profit,
                     R.drawable.ic_default_icon_currency,
                     R.drawable.ic_star)

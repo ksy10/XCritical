@@ -22,4 +22,14 @@
     <string name="more">ЕЩЕ</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="p_l_266_01"><![CDATA[P&L: 266,01]]></string>
+    <string name="required_field">Обязательное поле</string>
+    <string name="your_lastname">Ваша фамилия</string>
+    <string name="name">Имя</string>
+    <string name="your_name">Ваше имя</string>
+    <string name="lastname">Фамилия</string>
+    <string name="number">Телефон</string>
+    <string name="error_number">Некорректный номер телефона</string>
+    <string name="incorrect_e_mail">Некорректный e-mail</string>
+    <string name="terms_use">Я принимаю пользовательское соглашение</string>
+    <string name="change_broker">Сменить брокера</string>
 </resources>

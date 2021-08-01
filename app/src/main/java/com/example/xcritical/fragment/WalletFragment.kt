@@ -12,6 +12,7 @@ import android.widget.EditText
 import androidx.core.os.bundleOf
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xcritical.instruments.AdapterCardInstrument
@@ -19,6 +20,7 @@ import com.example.xcritical.R
 import com.example.xcritical.databinding.FragmentSignalsBinding
 import com.example.xcritical.databinding.FragmentWalletBinding
 import com.example.xcritical.instruments.AdapterGetMovies
+import com.example.xcritical.instruments.SwipeToDelete
 import com.example.xcritical.viewmodel.ViewModelInstrument
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,6 +45,9 @@ class WalletFragment : Fragment() {
         adapterCard = AdapterCardInstrument(viewModel.getList()) { id -> cardItemClicked(id) }
         recyclerView?.adapter = adapterCard
 
+        val itemTouchHelper = ItemTouchHelper(SwipeToDelete(adapterCard!!))
+        itemTouchHelper.attachToRecyclerView(recyclerView)
+
         editSearch?.addTextChangedListener(object: TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -51,9 +56,7 @@ class WalletFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
                 adapterCard?.filter?.filter(s)
             }
-
         })
-
     }
 
     private fun cardItemClicked(id: Int) {
