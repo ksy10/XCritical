@@ -8,6 +8,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.xcritical.R
 import com.example.xcritical.databinding.ActivityLogBinding
 import com.example.xcritical.databinding.ActivityRegistrationBinding
+import com.example.xcritical.spinner.AdapterCountiesNumbers
+import com.example.xcritical.spinner.CountriesNumbers
+import com.example.xcritical.spinner.CountriesNumbers.Countries.list
 import com.example.xcritical.viewmodel.ViewModelLog
 import com.example.xcritical.viewmodel.ViewModelRegistration
 
@@ -21,6 +24,7 @@ class RegistrationActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         initRegistration()
+        setSpinner()
     }
 
     private fun initRegistration() {
@@ -30,5 +34,10 @@ class RegistrationActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+    }
+
+    private fun setSpinner() {
+        val adapter = AdapterCountiesNumbers(this, CountriesNumbers.Countries.list)
+        binding.spinnerNumber.adapter = adapter
     }
 }

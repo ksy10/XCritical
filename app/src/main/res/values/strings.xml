@@ -32,4 +32,5 @@
     <string name="incorrect_e_mail">Некорректный e-mail</string>
     <string name="terms_use">Я принимаю пользовательское соглашение</string>
     <string name="change_broker">Сменить брокера</string>
+
 </resources>

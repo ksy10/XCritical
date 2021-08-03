@@ -23,6 +23,7 @@
             android:id="@+id/guideline1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/background"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.20" />
 
@@ -44,6 +45,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:background="@color/background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,12 +54,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/background"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:id="@+id/linearLayoutName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/background"
                     android:orientation="vertical">
 
                     <TextView
@@ -102,6 +106,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
+                    android:background="@color/background"
                     android:orientation="vertical">
 
                     <TextView
@@ -145,7 +150,8 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:background="@color/background">
 
                     <TextView
                         android:id="@+id/textNumber"
@@ -165,19 +171,23 @@
 
                     <Spinner
                         android:id="@+id/spinner_number"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="69dp"
+                        android:layout_height="26dp"
                         android:layout_marginStart="4dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:singleLine="true"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintEnd_toStartOf="@+id/editTextPhone"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textNumber" />
 
                     <EditText
                         android:id="@+id/editTextPhone"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
+                        android:layout_width="290dp"
+                        android:layout_height="42dp"
                         android:layout_marginTop="5dp"
                         android:ems="10"
                         android:fontFamily="@font/roboto"
@@ -188,14 +198,13 @@
                         android:textSize="14sp"
                         app:backgroundTint="@color/hintText"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/spinner_number"
                         app:layout_constraintTop_toBottomOf="@+id/textNumber" />
 
                     <TextView
                         android:id="@+id/textErrorNumber"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="73dp"
+                        android:layout_marginStart="81dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/roboto"
                         android:text="@string/error_number"
@@ -212,6 +221,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:background="@color/background"
                     android:orientation="vertical">
 
                     <TextView
@@ -253,7 +263,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:background="@color/background">
 
                     <Button
                         android:id="@+id/button"

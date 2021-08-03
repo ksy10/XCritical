@@ -35,16 +35,16 @@ class LogActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         } else {
-            val dialog = FragmentCustomDialog()
+            val dialog = FragmentCustomDialog(::onSendToast)
             dialog.show(supportFragmentManager, "customDialog")
         }
         }
     }
 
-    fun onSendToast() {
+    private fun onSendToast() {
         Toast.makeText(this,"Попробуйте ввести данные ещё раз!", Toast.LENGTH_SHORT).show()
-        //binding.textErrorEmail.visibility = View.INVISIBLE
-        //binding.textErrorPassword.visibility = View.INVISIBLE
+        binding.textErrorEmail.visibility = View.INVISIBLE
+        binding.textErrorPassword.visibility = View.INVISIBLE
     }
 
     fun onRegistration() {

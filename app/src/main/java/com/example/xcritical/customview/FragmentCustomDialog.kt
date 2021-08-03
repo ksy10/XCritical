@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.xcritical.R
 import com.example.xcritical.databinding.FragmentCustomDialogBinding
 
-class FragmentCustomDialog : DialogFragment() {
+class FragmentCustomDialog constructor(private val funk: () -> Unit) : DialogFragment() {
 
     private lateinit var binding: FragmentCustomDialogBinding
 
@@ -26,12 +28,8 @@ class FragmentCustomDialog : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         dialog?.setCancelable(false)
         binding.buttonOk.setOnClickListener {
-            //invoke(onClick(::onSendToast))
+            funk()
             dismiss()
         }
-    }
-
-    private fun onClick(mes: () -> Unit) {
-        mes()
     }
 }
