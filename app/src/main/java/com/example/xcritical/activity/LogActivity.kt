@@ -7,10 +7,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.example.xcritical.MyService
 import com.example.xcritical.R
 import com.example.xcritical.customview.FragmentCustomDialog
 import com.example.xcritical.databinding.ActivityLogBinding
 import com.example.xcritical.viewmodel.ViewModelLog
+import com.google.android.play.core.appupdate.v
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,6 +36,7 @@ class LogActivity : AppCompatActivity() {
             viewModel.saveLogin()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.anim.right_in, R.anim.left_out)
         } else {
             val dialog = FragmentCustomDialog(::onSendToast)
             dialog.show(supportFragmentManager, "customDialog")

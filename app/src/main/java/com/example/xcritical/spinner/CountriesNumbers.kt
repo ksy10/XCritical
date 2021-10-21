@@ -22,6 +22,14 @@ data class CountriesNumbers(val image: Int, val country: String, val number: Str
             R.drawable.ic_alandskie,
             R.drawable.ic_albania,
             R.drawable.ic_alzur,
+            R.drawable.ic_angalia,
+            R.drawable.ic_russia,
+            R.drawable.ic_avstralia,
+            R.drawable.ic_avstria,
+            R.drawable.ic_azerbaizan,
+            R.drawable.ic_alandskie,
+            R.drawable.ic_albania,
+            R.drawable.ic_alzur,
             R.drawable.ic_angalia
         )
 
@@ -41,10 +49,26 @@ data class CountriesNumbers(val image: Int, val country: String, val number: Str
             "Аландские острова",
             "Албания",
             "Алжир",
+            "Ангилья",
+            "Russia",
+            "Астралия",
+            "Австрия",
+            "Азербайджан",
+            "Аландские острова",
+            "Албания",
+            "Алжир",
             "Ангилья"
         )
 
         private val numbers = arrayOf(
+            "+7",
+            "(+61)",
+            "(+43)",
+            "(+994)",
+            "(+3581)",
+            "(+355)",
+            "(+213)",
+            "(+1264)",
             "+7",
             "(+61)",
             "(+43)",

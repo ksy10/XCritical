@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <OnSwipe
+            motion:dragDirection="dragRight"
+            motion:touchAnchorId="@+id/viewButton"
+            motion:touchAnchorSide="right" />
+        <KeyFrameSet>
+            <KeyPosition
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.75"
+                motion:percentY="-0.3"
+                motion:framePosition="25"
+                motion:motionTarget="@id/viewButton" />
+            <KeyPosition
+                motion:keyPositionType="pathRelative"
+                motion:percentY="-0.4"
+                motion:framePosition="50"
+                motion:motionTarget="@id/viewButton" />
+            <KeyPosition
+                motion:keyPositionType="pathRelative"
+                motion:percentX="0.25"
+                motion:percentY="-0.3"
+                motion:framePosition="75"
+                motion:motionTarget="@id/viewButton" />
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+        android:id="@+id/viewButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        motion:layout_constraintBottom_toBottomOf="parent"
+        motion:layout_constraintStart_toStartOf="parent"
+        motion:layout_constraintTop_toTopOf="parent" >
+        <CustomAttribute
+            motion:attributeName="BackgroundColor"
+            motion:customColorValue="#201F3F" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/viewButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" >
+        <CustomAttribute
+            motion:attributeName="BackgroundColor"
+            motion:customColorValue="#9999FF" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

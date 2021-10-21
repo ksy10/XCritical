@@ -15,11 +15,11 @@
     <string name="text_error_name">Обязательное поле</string>
     <string name="text_lastname">Фамилия</string>
     <string name="text_input_lastname">Ваша фамилия</string>
-    <string name="myDeal">МОИ СДЕЛКИ</string>
-    <string name="account">АККАУНТ</string>
-    <string name="instruments">ИНСТРУМЕНТЫ</string>
-    <string name="signals">СИГНАЛЫ</string>
-    <string name="more">ЕЩЕ</string>
+    <string name="myDeal">PAINT</string>
+    <string name="account">MOTION1</string>
+    <string name="instruments">GESTURE</string>
+    <string name="signals">MOVIES</string>
+    <string name="more">MOTION2</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="p_l_266_01"><![CDATA[P&L: 266,01]]></string>
     <string name="required_field">Обязательное поле</string>

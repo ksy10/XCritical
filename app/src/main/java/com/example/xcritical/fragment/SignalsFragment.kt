@@ -18,7 +18,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SignalsFragment : Fragment() {
-
     private val viewModel by lazy { ViewModelProvider(this).get(ViewModelService::class.java)}
     private var adapter: AdapterGetMovies? = null
     private lateinit var binding: FragmentSignalsBinding

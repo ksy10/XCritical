@@ -38,5 +38,5 @@
         android:id="@+id/informationFragment"
         android:name="com.example.xcritical.fragment.InformationFragment"
         android:label="fragment_information"
-        tools:layout="@layout/fragment_information" />
+        tools:layout="@layout/fragment_info" />
 </navigation>

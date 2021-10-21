@@ -171,12 +171,13 @@
 
                     <Spinner
                         android:id="@+id/spinner_number"
-                        android:layout_width="69dp"
+                        android:layout_width="70dp"
                         android:layout_height="26dp"
-                        android:layout_marginStart="4dp"
+                        android:layout_marginStart="2dp"
                         android:layout_marginTop="15dp"
                         android:layout_marginEnd="5dp"
                         android:layout_weight="1"
+                        android:dropDownWidth="350dp"
                         android:singleLine="true"
                         android:spinnerMode="dropdown"
                         app:layout_constraintEnd_toStartOf="@+id/editTextPhone"

@@ -1,6 +1,8 @@
 package com.example.xcritical.fragment
 
 
+import android.graphics.Paint
+import android.graphics.Path
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import androidx.core.os.bundleOf
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -26,41 +29,25 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class WalletFragment : Fragment() {
+    private lateinit var binding: FragmentWalletBinding
 
-    private val viewModel by lazy { ViewModelProvider(this).get(ViewModelInstrument::class.java)}
-    private var adapterCard: AdapterCardInstrument? = null
+    companion object {
+        var path = Path()
+        var brush = Paint()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_wallet, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_wallet, container, false)
+        initClear()
+        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val editSearch = getView()?.findViewById<EditText>(R.id.editSearch)
-        val recyclerView = getView()?.findViewById<RecyclerView>(R.id.recycler)
-        recyclerView?.layoutManager = LinearLayoutManager(this.context)
-        adapterCard = AdapterCardInstrument(viewModel.getList()) { id -> cardItemClicked(id) }
-        recyclerView?.adapter = adapterCard
-
-        val itemTouchHelper = ItemTouchHelper(SwipeToDelete(adapterCard!!))
-        itemTouchHelper.attachToRecyclerView(recyclerView)
-
-        editSearch?.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(s: Editable?) {
-                adapterCard?.filter?.filter(s)
-            }
-        })
-    }
-
-    private fun cardItemClicked(id: Int) {
-        val bundle = bundleOf("id" to id)
-        view?.findNavController()?.navigate(R.id.action_walletFragment_to_informationFragment, bundle)
+    private fun initClear() {
+        binding.buttonClear.setOnClickListener {
+            binding.paint.clear()
+        }
     }
 }
