@@ -18,7 +18,7 @@ class MyService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        _media.start();
+        _media.start()
         return START_STICKY
     }
 

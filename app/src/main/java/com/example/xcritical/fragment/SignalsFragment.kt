@@ -1,5 +1,6 @@
 package com.example.xcritical.fragment
 
+import android.content.IntentFilter
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,13 +14,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.xcritical.R
 import com.example.xcritical.databinding.FragmentSignalsBinding
 import com.example.xcritical.instruments.AdapterGetMovies
+import com.example.xcritical.instruments.UserAdapter
 import com.example.xcritical.viewmodel.ViewModelService
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SignalsFragment : Fragment() {
-    private val viewModel by lazy { ViewModelProvider(this).get(ViewModelService::class.java)}
-    private var adapter: AdapterGetMovies? = null
+    private val viewModel by lazy { ViewModelProvider(this).get(ViewModelService::class.java) }
+    //private var adapter: AdapterGetMovies? = null
+    private var adapter: UserAdapter? = null
     private lateinit var binding: FragmentSignalsBinding
 
     override fun onCreateView(
@@ -34,24 +37,24 @@ class SignalsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+        //initList()
+        //viewModel.getRequest()
+        //initButton()
+    }
 
-        viewModel.getRequest()
+    private fun initButton() {
+        //binding.buttonmovie.setOnClickListener {
+            //val listMovies = viewModel.getMoviesList()
+            //adapter = AdapterGetMovies(listMovies!!)
+        //}
+        /* binding.editTextSearch.addTextChangedListener(object: TextWatcher {
+             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
-        binding.buttonmovie.setOnClickListener {
-            val listMovies = viewModel.getMoviesList()
-            adapter = AdapterGetMovies(listMovies!!)
-            binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
-            binding.recyclerView.adapter = adapter
-        }
+             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
 
-        binding.editTextSearch.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(s: Editable?) {
-                adapter?.updateFilteredList(viewModel.setMoviesListForFilter(s.toString()))
-            }
-        })
+             override fun afterTextChanged(s: Editable?) {
+                 adapter?.updateFilteredList(viewModel.setMoviesListForFilter(s.toString()))
+             }
+         })*/
     }
 }

@@ -22,7 +22,7 @@ class AdapterGetMovies(private var movies: MutableList<Movies>?) : RecyclerView.
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
         holder.bind(movies!![position])
-        Picasso.get().load(movies!![position].imageurl).into(holder.imageMovie)
+        //Picasso.get().load(movies!![position].imageurl).into(holder.imageMovie)
     }
 
     override fun getItemCount(): Int {
@@ -31,22 +31,22 @@ class AdapterGetMovies(private var movies: MutableList<Movies>?) : RecyclerView.
 
     class MoviesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val nameMovie: TextView = itemView.findViewById(R.id.name)
+       /* val nameMovie: TextView = itemView.findViewById(R.id.name)
         val realName: TextView = itemView.findViewById(R.id.realname)
         val team: TextView = itemView.findViewById(R.id.team)
         val firstAppearance: TextView = itemView.findViewById(R.id.firstappearance)
         val createDby: TextView = itemView.findViewById(R.id.createdby)
         val publisher: TextView = itemView.findViewById(R.id.publisher)
-        val imageMovie: ImageView = itemView.findViewById(R.id.imageurl)
+        val imageMovie: ImageView = itemView.findViewById(R.id.imageurl)*/
 
         @SuppressLint("CheckResult")
         fun bind(movies: Movies) {
-            nameMovie.text = movies.name
+          /*  nameMovie.text = movies.name
             realName.text = movies.realname
             team.text = movies.team
             firstAppearance.text = movies.firstappearance
             createDby.text = movies.createdby
-            publisher.text = movies.publisher
+            publisher.text = movies.publisher*/
         }
     }
 
