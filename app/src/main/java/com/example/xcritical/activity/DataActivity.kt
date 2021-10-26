@@ -39,10 +39,10 @@ class DataActivity : AppCompatActivity() {
     }
 
     fun initList() {
-        //binding.buttonSee.setOnClickListener {
-            adapter = viewModel.getUsers()?.let { it1 -> UserAdapter(it1) }
+        binding.buttonSee.setOnClickListener {
+            adapter = viewModel.initGetList()?.let { it1 -> UserAdapter(it1) }
             binding.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
             binding.recyclerView.adapter = adapter
-        //}
+        }
     }
 }

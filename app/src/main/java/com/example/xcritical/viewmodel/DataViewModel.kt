@@ -1,6 +1,5 @@
 package com.example.xcritical.viewmodel
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,9 +13,10 @@ import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
-class DataViewModel @Inject constructor(private val dataBaseRepository: DataBaseRepository,) : ViewModel() {
+class DataViewModel @Inject constructor(private val dataBaseRepository: DataBaseRepository) :
+    ViewModel() {
 
-    var user: List<User>?= null
+    var user: List<User>? = null
     var email = MutableLiveData<String>()
     var password = MutableLiveData<String>()
 
@@ -24,13 +24,14 @@ class DataViewModel @Inject constructor(private val dataBaseRepository: DataBase
         getUsers()
     }
 
-    fun getUsers(): List<User>? {
+    private fun getUsers() {
         viewModelScope.launch(Dispatchers.IO) {
-            //withContext(Dispatchers.IO) {
-                user = dataBaseRepository.getUsers()
-                //delay(5000000)
-            }
-        //}
+            user = dataBaseRepository.getUsers()
+            delay(5000000)
+        }
+    }
+
+    fun initGetList(): List<User>? {
         return user
     }
 
